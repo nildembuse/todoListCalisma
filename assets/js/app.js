@@ -1,7 +1,7 @@
 const urlPrefix = 'https://todorestapi-20432433159e.herokuapp.com/api/todos'
 
 const requesUrl = urlPrefix + 'todos';
-const requesUsersUrl = urlPrefix + 'users';
+const requesUsersUrl = urlPrefix + 'delete';
 let todos = [];
 
 fetch(urlPrefix)
@@ -14,17 +14,22 @@ fetch(urlPrefix)
 
 async function loadDetailPage(todosId) {
      const todosDetail = await fetch(urlPrefix + 'todos/' + todosId).then(x => x.json());
-     const todosUpdate = await fetch(`${urlPrefix}  todos/ ${postId} /update`).then(x => x.json());
-    
-        renderDetailPage(todosDetail, todosUpdate);
+        renderDetailPage(todosDetail, );
 }
 
-function renderDetailPage(todosDetail, todosUpdate) {
+fetch(`https://todorestapi-20432433159e.herokuapp.com/api/todos/delete/${id}/`, {
+    method: 'DELETE'
+});
 
-    const updates = todosUpdate.map(x => `<div class="update"><h5>${x.name}</h5><p>${x.body}</p></div>`);
-
-    container.innerHTML = `
-    <h1>${todosDetail.title}</h1>
-    <p>${todosUpdate.body}</p>
-    <div class="updates">${updates.join('')}</div>`;
-}
+fetch(`https://todorestapi-20432433159e.herokuapp.com/api/todos/update/${id}/`, {
+    method: 'PUT',
+    body: JSON.stringify({
+        title: string,
+        completed: boolean,
+        actor: actorId,
+        assignee: assigneeId
+    }),
+    headers: {
+        'Content-type': 'application/json;'
+    }
+});
