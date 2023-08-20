@@ -1,8 +1,12 @@
 const urlPrefix = 'https://todorestapi-20432433159e.herokuapp.com/api/todos'
 
 const requesUrl = urlPrefix + 'todos';
-const requesUsersUrl = urlPrefix + 'delete';
+const requesdeletUrl = urlPrefix + 'delete';
+const requesUpdatUrl = urlPrefix + 'update';
+
 let todos = [];
+let deletes = [];
+let update = [];
 
 fetch(urlPrefix)
       .then(response => response.json())
