@@ -13,7 +13,7 @@ fetch(urlPrefix)
 
 
 async function loadDetailPage(usersId) {
-    const usersDetail = await fetch(urlPrefix + 'users/' + todosId).then(x => x.json());
+    const usersDetail = await fetch(urlPrefix + 'users/' + usersId).then(x => x.json());
         renderDetailPage(todosDetail, );
    }
 
